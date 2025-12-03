@@ -1,0 +1,11 @@
+- name: Full server setup
+  hosts: servers
+  become: yes
+
+  roles:
+    - base
+    - ufw
+    - fail2ban
+    - zsh
+    - tmux
+    - docker

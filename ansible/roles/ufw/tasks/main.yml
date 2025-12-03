@@ -1,0 +1,20 @@
+- name: Install UFW
+  apt:
+    name: ufw
+    state: present
+
+- name: Enable UFW service
+  systemd:
+    name: ufw
+    enabled: yes
+    state: started
+
+- name: Allow SSH (port 22)
+  ufw:
+    rule: allow
+    port: "22"
+    proto: tcp
+
+- name: Enable firewall
+  ufw:
+    state: enabled

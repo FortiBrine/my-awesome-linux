@@ -1,0 +1,24 @@
+- name: Install tmux
+  apt:
+    name: tmux
+    state: present
+
+- name: Create config directories
+  become_user: "{{ ansible_user }}"
+  file:
+    path: ~/.config/tmux/plugins
+    state: directory
+    recurse: yes
+
+- name: Install TPM
+  become_user: "{{ ansible_user }}"
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: ~/.config/tmux/plugins/tpm
+
+- name: Deploy tmux.conf
+  become_user: "{{ ansible_user }}"
+  template:
+    src: tmux.conf.j2
+    dest: ~/.config/tmux/tmux.conf
+

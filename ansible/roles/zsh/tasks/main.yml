@@ -1,0 +1,34 @@
+- name: Install Oh My Zsh
+  become_user: "{{ ansible_user }}"
+  shell: |
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  args:
+    executable: /bin/bash
+
+- name: Set default shell
+  user:
+    name: "{{ ansible_user }}"
+    shell: /usr/bin/zsh
+
+- name: Install ZSH plugins
+  become_user: "{{ ansible_user }}"
+  git:
+    repo: "{{ item.repo }}"
+    dest: "~/.oh-my-zsh/custom/plugins/{{ item.name }}"
+  loop:
+    - { name: "zsh-autosuggestions", repo: "https://github.com/zsh-users/zsh-autosuggestions" }
+    - { name: "zsh-syntax-highlighting", repo: "https://github.com/zsh-users/zsh-syntax-highlighting" }
+
+- name: Enable theme and plugins
+  become_user: "{{ ansible_user }}"
+  replace:
+    path: ~/.zshrc
+    regexp: '^ZSH_THEME=.*'
+    replace: 'ZSH_THEME="bira"'
+
+- name: Enable plugins
+  become_user: "{{ ansible_user }}"
+  replace:
+    path: ~/.zshrc
+    regexp: '^plugins=\(.*\)'
+    replace: 'plugins=(git sudo zsh-autosuggestions zsh-syntax-highlighting)'
