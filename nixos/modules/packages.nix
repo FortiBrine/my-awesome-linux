@@ -13,7 +13,6 @@
     kdePackages.kdenlive
     telegram-desktop
     steam
-    wine
     pciutils
     discord
     postman
@@ -26,6 +25,11 @@
     haruna
     scrcpy
     cpu-x
+    cpufetch
+    zip
+    unzip
+    adwaita-icon-theme
+    bottles
   ];
   nixpkgs.config.allowUnfree = true;
 }
