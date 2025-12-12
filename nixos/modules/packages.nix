@@ -30,6 +30,8 @@
     unzip
     adwaita-icon-theme
     bottles
+
+    temurin-bin-21
   ];
   nixpkgs.config.allowUnfree = true;
 }

@@ -11,6 +11,7 @@
       ./modules/nvidia.nix
       ./modules/rtl8821ce.nix
       ./modules/users.nix
+      ./modules/plymouth.nix
     ];
 
   boot.loader = {
