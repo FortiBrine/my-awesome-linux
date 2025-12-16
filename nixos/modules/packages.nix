@@ -30,8 +30,15 @@
     unzip
     adwaita-icon-theme
     bottles
+    wireguard-tools
+    yarn
+    nodejs
+    mongodb-compass
+    btop
 
     temurin-bin-21
   ];
+
+  networking.wireguard.enable = true;
   nixpkgs.config.allowUnfree = true;
 }

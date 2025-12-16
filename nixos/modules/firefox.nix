@@ -31,6 +31,12 @@
           installation_mode = "force_installed";
           updates_disabled  = false;
         };
+
+        "ultimatedark@medv.io" = {
+          install_url       = moz "ultimadark";
+          installation_mode = "force_installed";
+          updates_disabled  = false;
+        };
       };
     };
   };
