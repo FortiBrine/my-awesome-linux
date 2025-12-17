@@ -35,6 +35,8 @@
     nodejs
     mongodb-compass
     btop
+    tmux
+    rclone
 
     temurin-bin-21
   ];
