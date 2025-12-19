@@ -4,7 +4,7 @@
     ./zsh.nix
     ./packages.nix
     ./desktop.nix
-    ./nvidia.nix
+    ./graphics.nix
     ./rtl8821ce.nix
     ./users.nix
     ./plymouth.nix
