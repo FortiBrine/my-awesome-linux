@@ -1,10 +1,8 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    git
-    wget
-    vim
+    git wget vim scrcpy
     gnome-terminal
-    fastfetch
+    fastfetch cpufetch
     gimp
     prismlauncher
     jetbrains.idea-ultimate
@@ -23,13 +21,9 @@
     dbeaver-bin
     onlyoffice-desktopeditors
     haruna
-    scrcpy
     cpu-x
-    cpufetch
-    zip
-    unzip
+    zip unzip
     adwaita-icon-theme
-    bottles
     wireguard-tools
     yarn
     nodejs
@@ -38,7 +32,7 @@
     tmux
     rclone
 
-    temurin-bin-21
+    jdk21
   ];
 
   networking.wireguard.enable = true;
